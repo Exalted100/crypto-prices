@@ -11,23 +11,23 @@ function App() {
   const [numberOfDaysForPlotData, setNumberOfDaysForPlotData] = useState(10);
   const [cryptocurrency, setCryptocurrency] = useState("bitcoin");
 
-  const stats = [
-    {
-      key: "2022-08",
-      totalAmount: 167058500,
-      count: 89,
-    },
-    {
-      key: "2021-03",
-      totalAmount: 3257300,
-      count: 17,
-    },
-    {
-      key: "2022-07",
-      totalAmount: 45341563,
-      count: 115,
-    },
-  ];
+  // const stats = [
+  //   {
+  //     key: "2022-08",
+  //     totalAmount: 167058500,
+  //     count: 89,
+  //   },
+  //   {
+  //     key: "2021-03",
+  //     totalAmount: 3257300,
+  //     count: 17,
+  //   },
+  //   {
+  //     key: "2022-07",
+  //     totalAmount: 45341563,
+  //     count: 115,
+  //   },
+  // ];
 
   const onNumberOfDaysChange = (e) => {
     setNumberOfDaysForPlotData(e.target.value);
