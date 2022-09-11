@@ -1,42 +1,22 @@
 import Chart from "react-apexcharts";
 
 const LineChart = ({ transactionsStats }) => {
-  // console.log("data", transactionsStats)
-  // const plotData = {
-  //     amounts: [],
-  //     dates: [],
-  // };
   const plotData = {
     amounts: [],
     dates: [],
   };
+
   transactionsStats.map((item, itemIndex) => {
-    // plotData.amounts.push(item.totalAmount / 100);
-    // plotData.dates.push(item.key);
     plotData.amounts.push(item[1]);
     plotData.dates.push(new Date(item[0]).toLocaleDateString());
     return null;
   });
 
-  // plotData.dates = plotData.dates.sort(function (a, b) {
-  //     const date1 = new Date(a);
-  //     const date2 = new Date(b);
-
-  //     return date2 - date1;
-  // });
-
-  // console.log("type", typeof(plotData.dates[0]))
-
   const chartState = {
     series: [
       {
         name: "Price",
-        data:
-          plotData && plotData.amounts
-            ? plotData.amounts
-            : // ? plotData.amounts.slice(plotData.amounts.length - 10, plotData.amounts.length)
-              // ? plotData.amounts.slice(0, 7)
-              [],
+        data: plotData && plotData.amounts ? plotData.amounts : [],
       },
     ],
     options: {
@@ -58,13 +38,6 @@ const LineChart = ({ transactionsStats }) => {
         curve: "smooth",
         colors: ["#5CD89F"],
       },
-      //   title: {
-      //     text: 'All Transactions',
-      //     align: 'left',
-      //     style: {
-      //         fontSize: '20px',
-      //       },
-      //   },
       grid: {
         row: {
           colors: ["transparent", "transparent"], // takes an array which will be repeated on columns
@@ -73,7 +46,6 @@ const LineChart = ({ transactionsStats }) => {
       },
       xaxis: {
         categories: plotData ? plotData.dates : [],
-        // categories: plotData ? plotData.dates.slice(plotData.dates.length - 10, plotData.dates.length) : [],
         labels: {
           style: {
             fontSize: "14px",
@@ -95,9 +67,6 @@ const LineChart = ({ transactionsStats }) => {
           },
         },
       },
-      //   yaxis: {
-
-      //   },
       tooltip: {
         shared: true,
         intersect: false,

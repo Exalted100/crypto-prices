@@ -6,45 +6,21 @@ function App() {
   const [plotData, setPlotData] = useState([]);
   const dataStart = 1392577232;
   const [endDate, setEndDate] = useState("");
-  // const [dataStart, setDataStart] = useState(Date.now() / 1000 - new Date(60 * 24 * 10 ))
   const [dataEnd, setDataEnd] = useState(Math.floor(Date.now() / 1000));
   const [numberOfDaysForPlotData, setNumberOfDaysForPlotData] = useState(10);
   const [cryptocurrency, setCryptocurrency] = useState("bitcoin");
-
-  // const stats = [
-  //   {
-  //     key: "2022-08",
-  //     totalAmount: 167058500,
-  //     count: 89,
-  //   },
-  //   {
-  //     key: "2021-03",
-  //     totalAmount: 3257300,
-  //     count: 17,
-  //   },
-  //   {
-  //     key: "2022-07",
-  //     totalAmount: 45341563,
-  //     count: 115,
-  //   },
-  // ];
 
   const onNumberOfDaysChange = (e) => {
     setNumberOfDaysForPlotData(e.target.value);
   };
 
   const dateToTimeStamp = (date) => {
-    // date = date.split("-");
-    // const newDate = new Date( date[2], date[1] - 1, date[0]);
-    // return newDate.getTime()
     return Date.parse(date) / 1000;
   };
 
   const onEndDateChange = (e) => {
     setEndDate(e.target.value);
     setDataEnd(dateToTimeStamp(e.target.value));
-    console.log("data end", dataEnd);
-    // console.log(dateToTimeStamp(e.target.value))
   };
 
   useEffect(() => {
@@ -60,7 +36,7 @@ function App() {
           `https://api.coingecko.com/api/v3/coins/${cryptocurrency}/market_chart/range`,
           { params }
         );
-        // console.log(cryptoStats);
+
         setPlotData(
           cryptoStats.data.prices.slice(
             cryptoStats.data.prices.length - numberOfDaysForPlotData,
@@ -76,7 +52,7 @@ function App() {
       <h1 className="text-2xl font-semibold mb-10">Crypto Prices</h1>
 
       <label className="font-semibold mr-5 mb-5">
-        End Date: {" "}
+        End Date:{" "}
         <input
           onChange={onEndDateChange}
           value={endDate}
