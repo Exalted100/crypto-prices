@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 function App() {
   const [plotData, setPlotData] = useState([]);
   const dataStart = 1392577232;
-  const [endDate, setEndDate] = useState("");
+  const [endDate, setEndDate] = useState(Date.now().toLocaleDateString());
   // const [dataStart, setDataStart] = useState(Date.now() / 1000 - new Date(60 * 24 * 10 ))
   const [dataEnd, setDataEnd] = useState(Math.floor(Date.now() / 1000));
   const [numberOfDaysForPlotData, setNumberOfDaysForPlotData] = useState(10);
