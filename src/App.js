@@ -49,7 +49,7 @@ function App() {
 
   return (
     <div className="px-5 md:px-20 pt-10">
-      <h1 className="text-2xl font-semibold mb-10">Crypto Prices</h1>
+      <h1 className="text-2xl font-semibold mb-10 underline">Crypto Prices</h1>
 
       <label className="font-semibold mr-5 mb-5">
         End Date:{" "}
