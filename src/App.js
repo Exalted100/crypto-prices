@@ -73,7 +73,7 @@ function App() {
 
   return (
     <div className="px-5 md:px-20 pt-10">
-      <h1 className="text-2xl font-semibold pb-5">Crypto Prices</h1>
+      <h1 className="text-2xl font-semibold mb-10">Crypto Prices</h1>
 
       <label className="font-semibold mr-5 mb-5">
         End Date: {" "}
@@ -82,7 +82,7 @@ function App() {
           value={endDate}
           type="date"
           name="end-date"
-          className="shadow-4xl border-2 border-black px-2 py-1 font-normal cursor-pointer mb-5"
+          className="shadow-4xl border-2 border-black px-2 py-1 font-normal cursor-pointer mb-5 outline-none"
         />
       </label>
 
@@ -92,7 +92,7 @@ function App() {
           value={numberOfDaysForPlotData}
           onChange={onNumberOfDaysChange}
           type="number"
-          className="shadow-4xl border-2 border-black w-20 px-2 py-1 font-normal mb-5"
+          className="shadow-4xl border-2 border-black w-20 px-2 py-1 font-normal mb-5 outline-none"
         />
       </label>
 
@@ -101,7 +101,7 @@ function App() {
         <select
           value={cryptocurrency}
           onChange={(e) => setCryptocurrency(e.target.value)}
-          className="shadow-4xl border-2 border-black px-2 py-1 font-normal cursor-pointer mb-5"
+          className="shadow-4xl border-2 border-black px-2 py-1 font-normal cursor-pointer mb-5 outline-none"
         >
           <option value="bitcoin">Bitcoin (BTC)</option>
           <option value="ethereum">Ethereum (ETH)</option>
