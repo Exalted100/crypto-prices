@@ -36,7 +36,7 @@ const LineChart = ({ transactionsStats }) => {
       },
       stroke: {
         curve: "smooth",
-        colors: ["#5CD89F"],
+        colors: ["#056df5"],
       },
       grid: {
         row: {
